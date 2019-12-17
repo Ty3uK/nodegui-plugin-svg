@@ -3,7 +3,6 @@ import path from "path";
 
 import {
   QMainWindow,
-  QPushButton,
   FlexLayout,
   QWidget
 } from "@nodegui/nodegui";
@@ -13,7 +12,7 @@ import { QSvgWidget } from "./index";
 const readSvgFile = (): Promise<Buffer> => {
   return new Promise((resolve, reject) => {
     const chunks: Uint8Array[] = [];
-    const stream = fs.createReadStream(path.join(__dirname, "../assets/wikipedia.svg"));
+    const stream = fs.createReadStream(path.join(__dirname, "../assets/nodegui.svg"));
 
     stream.once("error", (err) => reject(err));
 
@@ -30,13 +29,10 @@ const rootView = new QWidget();
 rootView.setObjectName("root");
 rootView.setLayout(new FlexLayout());
 
-const button = new QPushButton();
-button.setText("Push Push Push!");
-
 const svg = new QSvgWidget();
+svg.setObjectName("logo");
 
 if (rootView.layout) {
-  rootView.layout.addWidget(button);
   rootView.layout.addWidget(svg);
 }
 
@@ -46,11 +42,16 @@ win.setStyleSheet(`
     flex: 1;
     height: '100%';
     align-items: 'center';
-    justify-content: 'space-around';
+    justify-content: 'center';
+  }
+
+  #logo {
+    width: 128px;
+    height: 128px;
   }
 `);
-win.setWindowTitle("NodeGUI Demo");
-win.resize(400, 700);
+win.setWindowTitle("NodeGUI SVG Demo");
+win.resize(192, 192);
 win.show();
 
 readSvgFile()
