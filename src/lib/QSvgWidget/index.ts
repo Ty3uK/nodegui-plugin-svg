@@ -5,8 +5,8 @@ export class QSvgWidget extends NodeWidget {
     native: NativeElement;
     constructor(fileOrContent?: string | Buffer, parent?: NodeWidget) {
         let native;
-        if (fileOrContent && parent) {
-            native = new addon.QSvgWidget(fileOrContent, parent.native);
+        if (fileOrContent) {
+            native = new addon.QSvgWidget(fileOrContent, parent ? parent.native : null);
         } else if (parent) {
             native = new addon.QSvgWidget(parent.native);
         } else {
