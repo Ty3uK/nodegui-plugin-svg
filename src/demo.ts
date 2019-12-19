@@ -46,12 +46,12 @@ win.setStyleSheet(`
   }
 
   #logo {
-    width: 128px;
-    height: 128px;
+    width: 192px;
+    height: 192px;
   }
 `);
 win.setWindowTitle("NodeGUI SVG Demo");
-win.resize(192, 192);
+win.resize(256, 256);
 win.show();
 
 readSvgFile()
