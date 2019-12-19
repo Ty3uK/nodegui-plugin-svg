@@ -1,19 +1,22 @@
 {
-  "name": "nodegui-plugin",
+  "name": "nodegui-plugin-svg",
   "version": "1.0.0",
-  "description": "A sample native plugin example for NodeGUI",
+  "description": "Plugin for NodeGUI that allows to work with QSvgWidget",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": "git@github.com/Ty3uK/nodegui-plugin-svg.git",
+	"homepage": "https://github.com/nodegui/nodegui-plugin-svg",
   "scripts": {
     "build": "tsc && npm run build:addon",
     "build:addon": "cross-env CMAKE_BUILD_PARALLEL_LEVEL=8 cmake-js compile",
-    "dev": "npm run build && qode dist/demo.js"
+    "dev": "npm run build && qode dist/demo.js",
+    "postinstall": "node install.js"
   },
-  "author": "Atul R",
+  "author": "Maksim Karelov <max.karelov@gmail.com>",
   "license": "MIT",
   "files": [
-    "dist",
-    "assets"
+    "dist/lib*",
+    "dist/index*"
   ],
   "peerDependencies": {
     "@nodegui/nodegui": "*"
@@ -21,10 +24,11 @@
   "dependencies": {
     "cmake-js": "^5.3.2",
     "cross-env": "^6.0.3",
+    "extract-zip": "^1.6.7",
     "node-addon-api": "^2.0.0"
   },
   "devDependencies": {
-    "@nodegui/nodegui": "^0.9.1",
+    "@nodegui/nodegui": "^0.10.0",
     "@nodegui/qode": "^1.0.6",
     "@types/node": "^12.12.14",
     "typescript": "^3.7.3"

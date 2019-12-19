@@ -16,7 +16,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/dist)
 
 project(${PLUGIN_ADDON_NAME})
 
-add_library(${PLUGIN_ADDON_NAME} SHARED  
+add_library(${PLUGIN_ADDON_NAME} SHARED
     "${CMAKE_JS_SRC}"
     "${PROJECT_SOURCE_DIR}/src/cpp/main.cpp"
     "${PROJECT_SOURCE_DIR}/src/cpp/QSvgWidget/qsvgwidget_wrap.cpp"

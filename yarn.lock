@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@nodegui/nodegui@^0.9.1":
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/@nodegui/nodegui/-/nodegui-0.9.1.tgz#69b0849434ba86aa8437d66f7bda6aa71199d011"
-  integrity sha512-RLROhzSHz08wvzQ11oceUPp8yiCCbB4xAUWJCVYG+DKnf8TOAmdZ+IV1EQr50joKrhPh4RhUREG55f/7onPs6A==
+"@nodegui/nodegui@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@nodegui/nodegui/-/nodegui-0.10.0.tgz#c53f6ff6e1afb0b96e7d3f576009d02b86238c5e"
+  integrity sha512-6Raj8nyzEdZLPiYM+4Ue13S+onVZ7giwTLyLcvQjTLSGHMJh/Y26Ljd8/mCP08LCWYOxvk411ypmYkuMKANmZw==
   dependencies:
     "@nodegui/qode" "^1.0.6"
     cmake-js "^6.0.0"
