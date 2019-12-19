@@ -11,6 +11,10 @@ Plugin for NodeGUI that allows to work with QSvgWidget
 <img src=".github/macos.png" height="256">
 </p>
 
+## Warning
+
+Windows support is not yet implemented. Stay tuned!
+
 ## Installation
 
 ```sh
