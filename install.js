@@ -38,10 +38,6 @@ const extractZip = async (source, targetDir) => {
 };
 
 const downloadFile = async (url, targetFilePath, options) => {
-  if (!(await isExists(targetPath))) {
-    await fs.promises.mkdir(path.dirname(targetPath));
-  }
-  
   const writeStream = fs.createWriteStream(targetFilePath);
   
   return await new Promise((resolve, reject) => {
