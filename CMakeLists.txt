@@ -12,6 +12,8 @@ include(./config/qtsvg.cmake)
 # -------------- User Config ---------------
 set(PLUGIN_ADDON_NAME "nodegui_plugin_svg")
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/dist)
+
 project(${PLUGIN_ADDON_NAME})
 
 add_library(${PLUGIN_ADDON_NAME} SHARED  

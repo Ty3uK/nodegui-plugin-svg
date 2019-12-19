@@ -44,7 +44,7 @@ function(AddQtSvgSupport addonName)
             "${QT_HOME_DIR}/include/QtSvg"
         )
         target_link_libraries(${addonName} PRIVATE
-            "${QT_HOME_DIR}/lib/QtSvg.so"
+            "${QT_HOME_DIR}/lib/libQt5Svg.so"
         )
     endif()    
 

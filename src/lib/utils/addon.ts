@@ -1,3 +1,3 @@
-const addon = require("../../../build/Release/nodegui_plugin_svg.node");
+const addon = require("../../nodegui_plugin_svg.node");
 
 export default addon;

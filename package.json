@@ -11,6 +11,10 @@
   },
   "author": "Atul R",
   "license": "MIT",
+  "files": [
+    "dist",
+    "assets"
+  ],
   "peerDependencies": {
     "@nodegui/nodegui": "*"
   },
