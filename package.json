@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": "git@github.com/Ty3uK/nodegui-plugin-svg.git",
-	"homepage": "https://github.com/nodegui/nodegui-plugin-svg",
+	"homepage": "https://github.com/Ty3uK/nodegui-plugin-svg",
   "scripts": {
     "build": "tsc && npm run build:addon",
     "build:addon": "cross-env CMAKE_BUILD_PARALLEL_LEVEL=8 cmake-js compile",
@@ -16,7 +16,8 @@
   "license": "MIT",
   "files": [
     "dist/lib*",
-    "dist/index*"
+    "dist/index*",
+    "install.js"
   ],
   "peerDependencies": {
     "@nodegui/nodegui": "*"
