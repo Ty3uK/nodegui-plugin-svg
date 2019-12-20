@@ -5,10 +5,10 @@
 Plugin for NodeGUI that allows to work with QSvgWidget
 
 <p align="center">
-<img src=".github/linux.png" height="256">
+<img src="https://raw.githubusercontent.com/Ty3uK/nodegui-plugin-svg/master/.github/linux.png" height="256">
 &nbsp;
 &nbsp;
-<img src=".github/macos.png" height="256">
+<img src="https://raw.githubusercontent.com/Ty3uK/nodegui-plugin-svg/master/.github/macos.png" height="256">
 </p>
 
 ## Warning
