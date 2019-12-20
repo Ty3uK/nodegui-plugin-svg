@@ -5,11 +5,13 @@
 #include <QPointer>
 
 #include "QtWidgets/QWidget/qwidget_macro.h"
+#include "QtWidgets/QWidget/nwidget.hpp"
 #include "nsvgwidget.hpp"
 
 class QSvgWidgetWrap : public Napi::ObjectWrap<QSvgWidgetWrap> {
  private:
   QPointer<NSvgWidget> instance;
+  static NWidget* getParentFromInfo(Napi::Value);
 
  public:
   QWIDGET_WRAPPED_METHODS_DECLARATION

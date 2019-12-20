@@ -18,6 +18,17 @@ Napi::Object QSvgWidgetWrap::init(Napi::Env env, Napi::Object exports) {
   return exports;
 }
 
+NWidget* QSvgWidgetWrap::getParentFromInfo(Napi::Value value) {
+  if (value.IsNull() || value.IsUndefined()) {
+    return nullptr;
+  }
+
+  Napi::Object parentObject = value.As<Napi::Object>();
+  QWidgetWrap* parentWidgetWrap = Napi::ObjectWrap<QWidgetWrap>::Unwrap(parentObject);
+
+  return parentWidgetWrap->getInternalInstance();
+}
+
 NSvgWidget* QSvgWidgetWrap::getInternalInstance() { return this->instance; }
 
 QSvgWidgetWrap::~QSvgWidgetWrap() { extrautils::safeDelete(this->instance); }
@@ -30,18 +41,9 @@ QSvgWidgetWrap::QSvgWidgetWrap(const Napi::CallbackInfo& info)
   if (info.Length() == 2) {
     Napi::String url = info[0].As<Napi::String>();
     QString imageUrl = QString::fromUtf8(url.Utf8Value().c_str());
-
-    Napi::Object parentObject = info[1].As<Napi::Object>();
-    QWidgetWrap* parentWidgetWrap =
-        Napi::ObjectWrap<QWidgetWrap>::Unwrap(parentObject);
-
-    this->instance =
-        new NSvgWidget(imageUrl, parentWidgetWrap->getInternalInstance());
+    this->instance = new NSvgWidget(imageUrl, QSvgWidgetWrap::getParentFromInfo(info[1]));
   } else if (info.Length() == 1) {
-    Napi::Object parentObject = info[0].As<Napi::Object>();
-    QWidgetWrap* parentWidgetWrap =
-        Napi::ObjectWrap<QWidgetWrap>::Unwrap(parentObject);
-    this->instance = new NSvgWidget(parentWidgetWrap->getInternalInstance());
+    this->instance = new NSvgWidget(QSvgWidgetWrap::getParentFromInfo(info[0]));
   } else {
     this->instance = new NSvgWidget(nullptr);
   }

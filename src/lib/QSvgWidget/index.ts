@@ -3,20 +3,27 @@ import { NativeElement, NodeWidget } from '@nodegui/nodegui';
 
 export class QSvgWidget extends NodeWidget {
     native: NativeElement;
-    constructor(fileOrContent?: string | Buffer, parent?: NodeWidget) {
-        let native;
-        if (fileOrContent) {
-            native = new addon.QSvgWidget(fileOrContent, parent ? parent.native : null);
-        } else if (parent) {
-            native = new addon.QSvgWidget(parent.native);
-        } else {
-            native = new addon.QSvgWidget();
+    
+    constructor(file?: string, parent?: NodeWidget) {
+        const args = [];
+        
+        if (file) {
+            args.push(file);
         }
+
+        if (parent) {
+            args.push(parent.native);
+        } else {
+            args.push(null);
+        }
+        
+        const native = new addon.QSvgWidget(...args);
         super(native);
         this.native = native;
         this.nodeParent = parent;
     }
-    load(fileOrContent: Buffer | string): void {
+    
+    load(fileOrContent: string | Buffer): void {
         this.native.load(fileOrContent);
     }
 }
