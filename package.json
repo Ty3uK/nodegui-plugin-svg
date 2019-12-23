@@ -1,6 +1,6 @@
 {
   "name": "nodegui-plugin-svg",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Plugin for NodeGUI that allows to work with QSvgWidget",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -10,8 +10,7 @@
     "build": "tsc && npm run build:addon",
     "build:addon": "cross-env CMAKE_BUILD_PARALLEL_LEVEL=8 cmake-js compile",
     "dev": "npm run build && qode dist/demo.js",
-    "postinstall": "node install.js",
-    "publish": "./publish.sh"
+    "postinstall": "node install.js"
   },
   "author": "Maksim Karelov <max.karelov@gmail.com>",
   "license": "MIT",
