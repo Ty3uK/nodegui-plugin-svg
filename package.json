@@ -1,6 +1,6 @@
 {
   "name": "nodegui-plugin-svg",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Plugin for NodeGUI that allows to work with QSvgWidget",
   "main": "index.js",
   "typings": "index.d.ts",
