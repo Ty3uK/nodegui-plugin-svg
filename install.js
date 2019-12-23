@@ -16,7 +16,7 @@ const binaryFileName = 'nodegui_plugin_svg.node';
 const archiveFileName = `${platform}-${arch}.zip`;
 const downloadLink =
   `https://github.com/Ty3uK/nodegui-plugin-svg/releases/download/v${libVersion}/${archiveFileName}`;
-const targetPath = path.join(__dirname, 'dist');
+const targetPath = __dirname;
 const archiveTargetPath = path.join(targetPath, archiveFileName);
 const binaryTargetPath = path.join(targetPath, binaryFileName);
 
