@@ -23,6 +23,8 @@ npm install nodegui-plugin-svg
 
 ## Usage
 
+### Plain
+
 ```javascript
 import {
   QMainWindow,
@@ -33,7 +35,7 @@ import { QSvgWidget } from 'nodegui-svg-widget';
 
 const win = new QMainWindow();
 const rootView = new QWidget();
-const svg = new QSvgWidget();
+const svg = new QSvgWidget('path/to/svg');
 
 rootView.setObjectName("root");
 rootView.setLayout(new FlexLayout());
@@ -60,4 +62,28 @@ win.setStyleSheet(`
 
 win.show();
 global.win = win;
+```
+
+### React
+
+```jsx
+import { Svg } from 'nodegui-svg-widget/react';
+
+const SvgView = () => (
+  <Svg src={'/path/to/svg'} />
+);
+```
+
+```jsx
+import { Svg } from 'nodegui-svg-widget/react';
+
+export default () => (
+  <Svg>
+    {`
+      <svg height="100" width="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+      </svg> 
+    `}
+  </Svg>
+);
 ```
