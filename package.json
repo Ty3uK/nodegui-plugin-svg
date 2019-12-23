@@ -14,13 +14,9 @@
   },
   "author": "Maksim Karelov <max.karelov@gmail.com>",
   "license": "MIT",
-  "files": [
-    "dist/lib*",
-    "dist/index*",
-    "install.js"
-  ],
   "peerDependencies": {
-    "@nodegui/nodegui": "*"
+    "@nodegui/nodegui": "*",
+    "@nodegui/react-nodegui": "*"
   },
   "dependencies": {
     "cmake-js": "^5.3.2",
